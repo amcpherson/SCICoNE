@@ -1,0 +1,39 @@
+package:
+  name: scicone
+  version: '0.0'
+
+source:
+  git_url: https://github.com/cbg-ethz/SCICoNE.git
+  git_rev: c72f7acb1a8f089180e023c6fdb0ee0f14f1656e
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - cmake >=3.19.7
+    - boost >=1.75.0
+    - openmp >=8.0.1
+    - nlopt >=2.6.2
+    - python >=3.7
+
+  host:
+    - python >=3.7
+
+  run:
+    - python >=3.7
+    - numpy
+    - scipy
+    - h5py
+    - tqdm
+    - seaborn
+    - graphviz
+    - Phenograph
+    - pybiomart
+
+about:
+  home: https://github.com/cbg-ethz/SCICoNE
+  license: GPLv3
+  summary: 'Single-cell copy number calling and event history reconstruction'
+
