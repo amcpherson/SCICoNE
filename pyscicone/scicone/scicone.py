@@ -239,12 +239,13 @@ class SCICoNE(object):
                 cmd_output = subprocess.run(cmd)
 
             # Delete the data file
-            os.remove(data_file)
+            if not self.persistence:
+                os.remove(data_file)
 
-            if lr is not None:
+            if lr is not None and not self.persistence:
                 os.remove(lr_file)
 
-            if sp is not None:
+            if sp is not None and not self.persistence:
                 os.remove(sp_file)
         except subprocess.SubprocessError as e:
             print("SubprocessError: ", e.returncode, e.output, e.stdout, e.stderr)
