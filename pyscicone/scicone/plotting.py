@@ -69,12 +69,9 @@ def plot_matrix(data, cbar_title="", mode='data', chr_stops_dict=None,
         ticks = dict()
         unique_labels = np.unique(labels_)
         n_unique_labels = len(unique_labels)
-        for label in unique_labels: # sorted
-            # Get last pos
-            t = np.where(labels_ == label)[0]
-            if len(t) > 1:
-                t = t[-1]
-            ticks[label] = t + 1
+        for t in np.where(labels_[1:] != labels_[:-1])[0]:
+            ticks[labels_[t]] = t + 1
+        ticks[labels_[-1]] = len(labels_)
         gs = GridSpec(1, 2, wspace=0.05, width_ratios=[1, 40])
         ax = fig.add_subplot(gs[0])
         bounds = [0] + list(ticks.values())
