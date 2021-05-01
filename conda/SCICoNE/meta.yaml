@@ -1,10 +1,10 @@
 package:
   name: scicone
-  version: '0.0'
+  version: '0.0.1'
 
 source:
-  git_url: https://github.com/cbg-ethz/SCICoNE.git
-  git_rev: c72f7acb1a8f089180e023c6fdb0ee0f14f1656e
+  git_url: https://github.com/amcpherson/SCICoNE.git
+  git_rev: 5e3420a0204a8b76f3ffdfa64671777b5d89c8b6
 
 build:
   number: 1
@@ -16,21 +16,11 @@ requirements:
     - boost >=1.75.0
     - openmp >=8.0.1
     - nlopt >=2.6.2
-    - python >=3.7
-
-  host:
-    - python >=3.7
-
+  
   run:
-    - python >=3.7
-    - numpy
-    - scipy
-    - h5py
-    - tqdm
-    - seaborn
-    - graphviz
-    - Phenograph
-    - pybiomart
+    - boost >=1.75.0
+    - openmp >=8.0.1
+    - nlopt >=2.6.2
 
 about:
   home: https://github.com/cbg-ethz/SCICoNE

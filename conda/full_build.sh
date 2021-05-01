@@ -9,5 +9,6 @@ conda install -f python
 
 scl enable devtoolset-9 conda/conda_build.sh
 
-conda install anaconda-client
-anaconda -t $CONDA_UPLOAD_TOKEN upload /usr/local/conda-bld/linux-64/scicone*.tar.bz2
+# anaconda client currently broken with python 3.9
+conda create -n anacondaclient python=3.8 anaconda-client
+/usr/local/envs/anacondaclient/bin/anaconda -t $CONDA_UPLOAD_TOKEN upload /usr/local/conda-bld/linux-64/scicone*.tar.bz2
